@@ -1,2 +1,90 @@
-body { font-family: 'Segoe UI', sans-serif; background:#f0f8ff; color:#333; }
-.section h2 { color:#004466; border-bottom:2px solid #004466; padding-bottom:0.5rem; margin-bottom:1rem; }
+:root {
+  --primary: #004466;
+  --accent: #ff4500;
+  --bg-light: #f0f8ff;
+  --bg-dark: #121212;
+  --text-light: #333;
+  --text-dark: #ddd;
+  --hero-overlay: rgba(0,0,0,0.5);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* HERO */
+.hero {
+  background: url('images/banner.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 4rem 1rem;
+}
+.hero .overlay {
+  position: absolute; inset: 0;
+  background: var(--hero-overlay);
+}
+.hero .container { position: relative; z-index: 1; }
+
+/* NAV */
+.site-nav .nav-link {
+  font-weight: 600;
+  margin: 0 0.75rem;
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+/* STEPPER */
+.stepper .step {
+  flex: 1;
+  padding: 1rem;
+}
+.stepper .step-circle {
+  width: 2rem; height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  margin: 0 auto 0.5rem;
+}
+
+/* PROJECTS */
+.logo-img { max-height: 80px; object-fit: contain; }
+
+/* ACHIEVEMENTS */
+.badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+}
+
+/* BLOG PREVIEW */
+#blog-preview .card {
+  border-color: var(--accent);
+}
+
+/* CHARTS */
+canvas { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* FOOTER */
+footer {
+  background: white;
+  color: var(--primary);
+  border-top: 1px solid #ddd;
+}
