@@ -14,21 +14,32 @@
   <!-- AOS for scroll animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
+  <!-- particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-mode">
 
-  <!-- HEADER / HERO -->
+  <!-- PARTICLE BACKDROP -->
+  <div id="particles-js" class="particles-bg"></div>
+
+  <!-- HERO BANNER -->
   <header class="hero position-relative text-center text-white mb-5">
     <div class="overlay"></div>
+    <figure class="hero-banner mx-auto my-4">
+      <img src="images/banner.jpg" alt="Abstract AI-driven protein–ligand interaction rendering">
+      <figcaption class="text-white">Protein–ligand interactions visualized through AI and machine learning</figcaption>
+    </figure>
     <div class="container position-relative">
-      <img src="images/headshot.jpg" class="rounded-circle border border-3 border-white mb-3" width="160" height="160" alt="Aarushi Gajri">
+      <img src="images/headshot.jpg" class="rounded-circle border border-3 border-white mb-3 headshot" alt="Aarushi Gajri">
       <h1 class="display-5 fw-bold">Aarushi Gajri</h1>
       <p class="lead mb-4">AI for Biology · Protein Modeling · Personalized Medicine</p>
       <nav class="nav justify-content-center mb-3">
         <a class="nav-link text-white" href="#about">About</a>
         <a class="nav-link text-white" href="#pipeline">Pipeline</a>
+        <a class="nav-link text-white" href="#timeline">Timeline</a>
         <a class="nav-link text-white" href="#projects">Projects</a>
         <a class="nav-link text-white" href="#achievements">Achievements</a>
         <a class="nav-link text-white" href="blog/index.html">Blog</a>
@@ -42,7 +53,17 @@
     <!-- ABOUT ME -->
     <section id="about" class="mb-5" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
-      <p>I’m a Master’s student at Georgia Tech, building AI/ML models for protein–ligand interactions, MoRF binding, and immune repertoire analysis. I love crafting generative models and predictive tools that drive personalized medicine and drug discovery.</p>
+      <p>
+        I’m a Master’s student in Bioinformatics at Georgia Tech, passionate about leveraging AI/ML to decode biology. My work spans:
+      </p>
+      <ul>
+        <li>LLM-driven extraction of Molecular Recognition Feature (MoRF) triggers</li>
+        <li>Deep models for residue-level ligand-binding prediction</li>
+        <li>Graph-based clustering of immune repertoires</li>
+      </ul>
+      <p>
+        I aim to design generative and predictive tools that accelerate personalized medicine and novel therapeutic discovery.
+      </p>
     </section>
 
     <!-- RESEARCH PIPELINE -->
@@ -52,7 +73,7 @@
         <div class="step text-center">
           <div class="step-circle">1</div>
           <h5>Literature Mining</h5>
-          <p>LLMs + regex to extract MoRF triggers & structure mentions.</p>
+          <p>LLM + regex to extract MoRF triggers & structural mentions.</p>
         </div>
         <div class="step text-center">
           <div class="step-circle">2</div>
@@ -62,12 +83,37 @@
         <div class="step text-center">
           <div class="step-circle">3</div>
           <h5>Model Development</h5>
-          <p>Train BiLSTM & PLM fine-tuned multi-task networks.</p>
+          <p>Train BiLSTM & fine-tuned PLM for disorder & binding.</p>
         </div>
         <div class="step text-center">
           <div class="step-circle">4</div>
           <h5>Validation & Deployment</h5>
-          <p>Evaluate on BioLiP, present at conferences, integrate in workflows.</p>
+          <p>Evaluate on BioLiP, publish posters, integrate into pipelines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="mb-5" data-aos="fade-up">
+      <h2 class="section-title">My Journey</h2>
+      <div class="timeline d-flex justify-content-center flex-wrap">
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Jul ’19–Jul ’23: BTech (Hons) Bioengineering – IIT Mandi">
+          <img src="images/iitmandi-logo.png" alt="IIT Mandi">
+        </div>
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Summer ’22: Mitacs Intern – UBC">
+          <img src="images/ubc-logo.png" alt="UBC">
+        </div>
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Jun–Dec ’21: Data Science Intern – Elucidata & MedGenome">
+          <img src="images/elucidata-logo.png" alt="Elucidata">
+        </div>
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Jul ’23–Jul ’24: Bioinformatics Analyst – MedGenome">
+          <img src="images/medgenome-logo.png" alt="MedGenome">
+        </div>
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Aug ’24–Present: MS Bioinformatics – Georgia Tech">
+          <img src="images/gatech-logo.png" alt="Georgia Tech">
+        </div>
+        <div class="timeline-item" data-bs-toggle="tooltip" title="Summer ’25: Graduate Intern – Regeneron">
+          <img src="images/regeneron-logo.png" alt="Regeneron">
         </div>
       </div>
     </section>
@@ -76,14 +122,16 @@
     <section id="projects" class="mb-5" data-aos="fade-up">
       <h2 class="section-title">Projects</h2>
       <div class="row g-4">
-        <!-- Project Card 1 -->
+        <!-- Project 1 -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="images/elucidata-logo.png" class="card-img-top p-3 logo-img" alt="MoRF Trigger NLP">
+            <img src="images/elucidata-logo.png" class="card-img-top logo-img p-3" alt="MoRF Trigger NLP">
             <div class="card-body">
               <h5 class="card-title">MoRF Trigger NLP</h5>
-              <p class="card-text">Built an LLM+regex pipeline to extract & classify MoRF triggers from ~200 abstracts.</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">Learn More</button>
+              <p class="card-text">
+                Built an LLM+regex pipeline to extract and classify Molecular Recognition Feature triggers from over 200 abstracts, creating a structured MoRF–trigger–structure database.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal1">Learn More</button>
             </div>
           </div>
         </div>
@@ -91,30 +139,29 @@
         <div class="modal fade" id="modal1" tabindex="-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">MoRF Trigger NLP Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
+              <div class="modal-header"><h5>MoRF Trigger NLP Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
               <div class="modal-body">
                 <ul>
-                  <li>High-precision prompt engineering with GPT</li>
-                  <li>Regex parsing to clean & standardize triggers</li>
-                  <li>8 ligand classes & secondary-structure bins</li>
-                  <li>Poster at Suddath Symposium 2025</li>
+                  <li>Prompt-engineered GPT-4 for MoRF QA</li>
+                  <li>Regex parsing to standardize chemical names</li>
+                  <li>8 molecular bins & secondary-structure categories</li>
+                  <li>Poster at 2025 Suddath Symposium</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
+        <!-- Project 2 -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="images/gatech-logo.png" class="card-img-top p-3 logo-img" alt="Binding Propensity Model">
+            <img src="images/gatech-logo.png" class="card-img-top logo-img p-3" alt="Binding Propensity Model">
             <div class="card-body">
               <h5 class="card-title">Binding Propensity Model</h5>
-              <p class="card-text">Dual-head BiLSTM & PLM fine-tuning to predict disorder & ligand binding per residue.</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">Learn More</button>
+              <p class="card-text">
+                Dual-head deep model (BiLSTM + PLM fine-tuning) predicting both intrinsic disorder and ligand-binding propensity at single-residue resolution.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal2">Learn More</button>
             </div>
           </div>
         </div>
@@ -122,22 +169,136 @@
         <div class="modal fade" id="modal2" tabindex="-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Binding Propensity Model Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
+              <div class="modal-header"><h5>Binding Propensity Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
               <div class="modal-body">
                 <ul>
-                  <li>ESM2 embeddings + multi-task loss</li>
-                  <li>Joint training on disorder and BioLiP binding labels</li>
-                  <li>Packaged as a Python library in Torres Lab</li>
+                  <li>ESM2 embeddings + BiLSTM attention</li>
+                  <li>Dual-loss on disorder & BioLiP binding labels</li>
+                  <li>Spearman ρ > 0.65 on held-out test</li>
+                  <li>Python package for Torres Lab</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Repeat similarly for the other four projects (BCR Clustering, PRS, Imputation, ALS GWAS) -->
+        <!-- Project 3 -->
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="images/regeneron-logo.png" class="card-img-top logo-img p-3" alt="BCR Clustering">
+            <div class="card-body">
+              <h5 class="card-title">Graph-Based BCR Clustering</h5>
+              <p class="card-text">
+                Developed k-NN + Louvain + MST pipeline to recover BCR clonal lineages from 1M+ sequences, highlighting affinity maturation hierarchies.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal3">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 3 -->
+        <div class="modal fade" id="modal3" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header"><h5>BCR Clustering Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+              <div class="modal-body">
+                <ul>
+                  <li>Sparse k-NN graph on CDR3 distances</li>
+                  <li>Louvain communities & MST lineage trees</li>
+                  <li>Custom representative-sequence heuristic</li>
+                  <li>Intern report & prototype at Regeneron</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="images/medgenome-logo.png" class="card-img-top logo-img p-3" alt="Cardiac PRS">
+            <div class="card-body">
+              <h5 class="card-title">Ensemble Polygenic Risk Score</h5>
+              <p class="card-text">
+                Combined XGBoost & deep-ensemble PRS models for cardiovascular risk—AUC improved from 0.72 to 0.78 in South Asian cohorts.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal4">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 4 -->
+        <div class="modal fade" id="modal4" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header"><h5>PRS Model Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+              <div class="modal-body">
+                <ul>
+                  <li>Gradient boosting + neural net ensemble</li>
+                  <li>Nested cross-validation & calibration</li>
+                  <li>AUC gain of +0.06 vs. baseline PRS</li>
+                  <li>Subgroup analysis on five cohorts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="images/medgenome-logo.png" class="card-img-top logo-img p-3" alt="Genomic Imputation">
+            <div class="card-body">
+              <h5 class="card-title">Deep-Learning Imputation</h5>
+              <p class="card-text">
+                CNN+self-attention model replicating GLIMPSE 2.0, reducing 0.5× WGS error by 20% on simulated low-pass data.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal5">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 5 -->
+        <div class="modal fade" id="modal5" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header"><h5>Imputation Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+              <div class="modal-body">
+                <ul>
+                  <li>CNN + transformer blocks for genotype prediction</li>
+                  <li>20% error reduction vs. GLIMPSE 2.0</li>
+                  <li>Nextflow pipeline for scalable runs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="images/iitmandi-logo.png" class="card-img-top logo-img p-3" alt="ALS GWAS">
+            <div class="card-body">
+              <h5 class="card-title">NN GWAS & Validation</h5>
+              <p class="card-text">
+                Deep neural network for ALS association + novel no-phenotype statistical test, generalizable to multigenic diseases.
+              </p>
+              <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal6">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 6 -->
+        <div class="modal fade" id="modal6" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header"><h5>GWAS Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+              <div class="modal-body">
+                <ul>
+                  <li>5-layer MLP on SNP feature encodings</li>
+                  <li>Permutation-free validation protocol</li>
+                  <li>2× speed-up vs. bootstrap tests</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -145,10 +306,10 @@
     <section id="achievements" class="mb-5" data-aos="fade-up">
       <h2 class="section-title">Achievements</h2>
       <div class="d-flex flex-wrap gap-2">
-        <span class="badge bg-primary">🏅 Silver Medallist – IIT Mandi</span>
-        <span class="badge bg-primary">🏆 Grad Research Award – Georgia Tech</span>
-        <span class="badge bg-primary">🧬 Poster – Suddath Symposium 2025</span>
-        <span class="badge bg-primary">🌍 Mitacs Scholar – UBC</span>
+        <span class="badge bg-accent">🏅 Silver Medallist – IIT Mandi</span>
+        <span class="badge bg-accent">🏆 Grad Research Award – Georgia Tech</span>
+        <span class="badge bg-accent">🧬 Poster – Suddath Symposium 2025</span>
+        <span class="badge bg-accent">🌍 Mitacs Scholar – UBC</span>
       </div>
     </section>
 
@@ -159,20 +320,7 @@
         <div class="card-body">
           <h5 class="card-title"><a href="blog/index.html">Breaking Into Bioinformatics</a></h5>
           <p class="text-muted"><small>Published July 2025</small></p>
-          <p>How I combined engineering, deep learning, and biology to launch my AI-driven bioinformatics career—and tips for newcomers.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS VISUALIZATIONS -->
-    <section id="skills" class="mb-5" data-aos="fade-up">
-      <h2 class="section-title">Skills Overview</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <canvas id="skillsRadar"></canvas>
-        </div>
-        <div class="col-md-6">
-          <canvas id="performanceBar"></canvas>
+          <p>How I combined engineering, deep learning, and biology to build my career in AI-driven bioinformatics—and tips to get started.</p>
         </div>
       </div>
     </section>
@@ -181,51 +329,36 @@
 
   <!-- FOOTER -->
   <footer class="bg-light text-center py-4">
-    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">Contact</a></p>
+    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">aarushi@example.com</a></p>
   </footer>
 
-
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Initialize AOS
+    // AOS init
     AOS.init({ duration: 800, once: true });
 
-    // Initialize Bootstrap tooltips (for timeline if used)
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(function(el){ return new bootstrap.Tooltip(el); });
-
-    // Dark/Light Mode Toggle
-    const toggleBtn = document.getElementById('toggleTheme');
-    toggleBtn.addEventListener('click', () => {
+    // Theme toggle
+    const btn = document.getElementById('toggleTheme');
+    btn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       document.body.classList.toggle('light-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+      btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
     });
 
-    // Radar Chart
-    const radarCtx = document.getElementById('skillsRadar').getContext('2d');
-    new Chart(radarCtx, {
-      type: 'radar',
-      data: {
-        labels: ['Python','PyTorch','TensorFlow','ML','NLP','Graph Theory','Data Analysis','Bioinformatics'],
-        datasets: [{ label: 'Proficiency', data: [9,8,7,9,8,7,8,9], fill: true,
-          backgroundColor: 'rgba(0,123,255,0.2)', borderColor: 'rgba(0,123,255,1)' }]
-      },
-      options: { scales: { r: { suggestedMin:0, suggestedMax:10 }}}
-    });
+    // Initialize tooltips
+    var tlist = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tlist.map(el => new bootstrap.Tooltip(el));
 
-    // Bar Chart
-    const barCtx = document.getElementById('performanceBar').getContext('2d');
-    new Chart(barCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Model A','Model B','Model C','Model D'],
-        datasets: [{ label: 'Accuracy (%)', data: [87,92,89,94], backgroundColor: 'rgba(0,123,255,0.6)' }]
-      },
-      options: { scales: { y: { beginAtZero:true, max:100 }}}
+    // particles.js
+    particlesJS('particles-js',{
+      "particles": {
+        "number": { "value": 50 },
+        "size": { "value": 3 },
+        "move": { "speed": 1 },
+        "line_linked": { "enable": true, "opacity": 0.1 }
+      }
     });
   </script>
 </body>
