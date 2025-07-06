@@ -1,71 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aarushi Gajri – AI & Bioinformatics</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aarushi Gajri &mdash; AI & Bioinformatics</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <img class="headshot" src="images/headshot.jpg" alt="Aarushi Gajri">
     <h1>Aarushi Gajri</h1>
-    <p>AI for Biology • Protein Modeling • Drug Discovery</p>
-    <nav>
+    <p class="subtitle">AI for Biology&nbsp;•&nbsp;Protein Modeling&nbsp;•&nbsp;Personalized Medicine</p>
+    <nav class="site-nav">
       <a href="#about">About</a>
+      <a href="#pipeline">Pipeline</a>
       <a href="#projects">Projects</a>
-      <a href="#timeline">Journey</a>
       <a href="#achievements">Achievements</a>
       <a href="blog/index.html">Blog</a>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="images/headshot.jpg" class="headshot" alt="Profile Photo" />
-    <p>I am a researcher working at the intersection of AI and bioinformatics. My journey spans deep learning for protein–ligand interactions, MoRF modeling, and large-scale immune repertoire clustering. I aim to build generative and predictive tools that power the future of personalized medicine and therapeutic discovery.</p>
-  </section>
+  <main>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>MoRF Trigger Extraction via LLMs</h3>
-      <p>Used large language models with regex and prompt engineering to extract ligand triggers and structural transitions from biological abstracts, forming a clean MoRF-trigger database.</p>
-    </div>
-    <div class="card">
-      <h3>Residue-Level Binding Propensity Prediction</h3>
-      <p>Developed BiLSTM and fine-tuned PLM architectures for predicting per-residue ligand binding propensity and disorder from BioLiP data.</p>
-    </div>
-    <div class="card">
-      <h3>BCR Family Clustering at Regeneron</h3>
-      <p>Designed graph-based algorithms to cluster large-scale immune repertoires using k-NN, Louvain, MST, and subgraph mining approaches.</p>
-    </div>
-  </section>
+    <!-- ABOUT ME -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I’m a Master’s student in Bioinformatics at Georgia Tech, with research spanning:</p>
+      <ul>
+        <li>LLM & NLP extraction of MoRF triggers</li>
+        <li>Deep learning for residue-level ligand binding</li>
+        <li>Graph-based immune repertoire clustering</li>
+      </ul>
+      <p>My goal is to build generative and predictive AI tools for next-gen therapeutics and precision medicine.</p>
+    </section>
 
-  <section id="timeline">
-    <h2>My Journey</h2>
-    <div class="timeline">
-      <!-- Example logos with tooltips -->
-      <div class="logo" title="IIT Mandi – BTech (Hons)"><img src="images/iitmandi-logo.png" alt="IIT Mandi" /></div>
-      <div class="logo" title="UBC – Research Intern"><img src="images/ubc-logo.png" alt="UBC" /></div>
-      <div class="logo" title="MedGenome – Bioinformatics Analyst"><img src="images/medgenome-logo.png" alt="MedGenome" /></div>
-      <div class="logo" title="Georgia Tech – MS Bioinformatics"><img src="images/gatech-logo.png" alt="Georgia Tech" /></div>
-      <div class="logo" title="Regeneron – Graduate Intern"><img src="images/regeneron-logo.png" alt="Regeneron" /></div>
-    </div>
-  </section>
+    <!-- INTERACTIVE PIPELINE -->
+    <section id="pipeline" class="section">
+      <h2>Research Pipeline</h2>
+      <div class="pipeline-steps">
+        <details class="step"><summary>1. Literature Mining</summary>
+          <p>Use LLMs & regex to extract MoRF triggers and secondary-structure mentions from abstracts.</p>
+        </details>
+        <details class="step"><summary>2. Database Curation</summary>
+          <p>Clean and classify triggers into 8 molecular bins; curate structure transition categories.</p>
+        </details>
+        <details class="step"><summary>3. Model Development</summary>
+          <p>Train BiLSTM + PLM fine-tuned dual-head networks for disorder & ligand-binding at residue level.</p>
+        </details>
+        <details class="step"><summary>4. Validation & Deployment</summary>
+          <p>Evaluate on held-out BioLiP data; present at conferences; integrate into lab pipelines.</p>
+        </details>
+      </div>
+    </section>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>🏆 Institute Silver Medalist – IIT Mandi</li>
-      <li>🎓 Graduate Research Award – Georgia Tech</li>
-      <li>🧬 Poster – Suddath Symposium 2025</li>
-      <li>🌍 Mitacs Globalink Scholar – UBC</li>
-    </ul>
-  </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
 
-  <footer>
-    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">Contact</a></p>
+      <article class="project-card">
+        <h3>MoRF Trigger Extraction via LLMs</h3>
+        <p>LLM-powered pipeline to mine ~200 abstracts, extract triggers, and build a structured MoRF-trigger database.</p>
+        <details><summary>Details</summary>
+          <p>Prompt-engineered GPT calls + regex cleaning yielded high-fidelity trigger assignments. Database powered downstream binding-propensity modeling. Poster at Suddath Symposium 2025.</p>
+        </details>
+      </article>
+
+      <article class="project-card">
+        <h3>Residue-Level Binding Propensity Modeling</h3>
+        <p>Dual-head classifier (BiLSTM & PLM fine-tuning) predicting intrinsic disorder and ligand binding per residue.</p>
+        <details><summary>Details</summary>
+          <p>Used ESM2 embeddings; multi-task loss on disorder masks & BioLiP binding labels; achieved [your metric here]. Deployed as Python package in Torres lab.</p>
+        </details>
+      </article>
+
+      <article class="project-card">
+        <h3>Graph-Based BCR Clustering</h3>
+        <p>Novel pipeline to cluster B-cell receptors by lineage using k-NN graphs, Louvain, MST, and dense subgraph analysis.</p>
+        <details><summary>Details</summary>
+          <p>Handled 1M+ sequences, identified hierarchy of clones, and visualized affinity maturation paths. Intern report at Regeneron 2025.</p>
+        </details>
+      </article>
+
+      <!-- add more <article> for each project -->
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
+      <ul>
+        <li>🏅 Institute Silver Medalist – IIT Mandi</li>
+        <li>🏆 Graduate Research Award – Georgia Tech</li>
+        <li>🧬 Poster Presentation – Suddath Symposium 2025</li>
+        <li>🌍 Mitacs Globalink Scholar – UBC</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">aarushi@example.com</a></p>
   </footer>
+
 </body>
 </html>
+
