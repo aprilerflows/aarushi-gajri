@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aarushi Gajri &mdash; AI & Bioinformatics</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aarushi Gajri — AI & Bioinformatics</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function openProject(evt, name) {
+      document.querySelectorAll('.project-content').forEach(c=>c.style.display='none');
+      document.querySelectorAll('.tablink').forEach(b=>b.classList.remove('active'));
+      document.getElementById(name).style.display='block';
+      evt.currentTarget.classList.add('active');
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // open first tab by default
+      const first = document.querySelector('.tablink');
+      if(first) first.click();
+    });
+  </script>
 </head>
 <body>
 
@@ -12,7 +25,7 @@
   <header class="site-header">
     <img class="headshot" src="images/headshot.jpg" alt="Aarushi Gajri">
     <h1>Aarushi Gajri</h1>
-    <p class="subtitle">AI for Biology&nbsp;•&nbsp;Protein Modeling&nbsp;•&nbsp;Personalized Medicine</p>
+    <p class="subtitle">AI for Biology · Protein Modeling · Personalized Medicine</p>
     <nav class="site-nav">
       <a href="#about">About</a>
       <a href="#pipeline">Pipeline</a>
@@ -27,74 +40,116 @@
     <!-- ABOUT ME -->
     <section id="about" class="section">
       <h2>About Me</h2>
-      <p>I’m a Master’s student in Bioinformatics at Georgia Tech, with research spanning:</p>
-      <ul>
-        <li>LLM & NLP extraction of MoRF triggers</li>
-        <li>Deep learning for residue-level ligand binding</li>
-        <li>Graph-based immune repertoire clustering</li>
-      </ul>
-      <p>My goal is to build generative and predictive AI tools for next-gen therapeutics and precision medicine.</p>
+      <p>I’m a Master’s student in Bioinformatics at Georgia Tech, building AI tools for protein–ligand interactions, MoRF analysis, and immune repertoire clustering. My passion is to develop generative and predictive models that accelerate personalized medicine and drug discovery.</p>
     </section>
 
-    <!-- INTERACTIVE PIPELINE -->
+    <!-- PIPELINE -->
     <section id="pipeline" class="section">
       <h2>Research Pipeline</h2>
       <div class="pipeline-steps">
         <details class="step"><summary>1. Literature Mining</summary>
-          <p>Use LLMs & regex to extract MoRF triggers and secondary-structure mentions from abstracts.</p>
+          <p>LLMs + regex to extract MoRF triggers & structural mentions from abstracts (~200 papers).</p>
         </details>
         <details class="step"><summary>2. Database Curation</summary>
-          <p>Clean and classify triggers into 8 molecular bins; curate structure transition categories.</p>
+          <p>Clean & classify triggers into 8 molecular bins; annotate structure transitions.</p>
         </details>
         <details class="step"><summary>3. Model Development</summary>
-          <p>Train BiLSTM + PLM fine-tuned dual-head networks for disorder & ligand-binding at residue level.</p>
+          <p>Train BiLSTM + PLM fine-tuning for joint disorder & ligand-binding prediction.</p>
         </details>
         <details class="step"><summary>4. Validation & Deployment</summary>
-          <p>Evaluate on held-out BioLiP data; present at conferences; integrate into lab pipelines.</p>
+          <p>Evaluate on BioLiP, present at Suddath Symposium, integrate in lab workflows.</p>
         </details>
       </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
-      <h2>Projects</h2>
-
-      <article class="project-card">
+      <h2>All Projects</h2>
+      <!-- Tab Buttons -->
+      <div class="tabs">
+        <button class="tablink" onclick="openProject(event,'proj1')">MoRF Trigger NLP</button>
+        <button class="tablink" onclick="openProject(event,'proj2')">Binding Propensity</button>
+        <button class="tablink" onclick="openProject(event,'proj3')">BCR Clustering</button>
+        <button class="tablink" onclick="openProject(event,'proj4')">Cardiac PRS</button>
+        <button class="tablink" onclick="openProject(event,'proj5')">Genomic Imputation</button>
+        <button class="tablink" onclick="openProject(event,'proj6')">ALS GWAS</button>
+      </div>
+      <!-- Tab Contents -->
+      <div id="proj1" class="project-content">
         <h3>MoRF Trigger Extraction via LLMs</h3>
-        <p>LLM-powered pipeline to mine ~200 abstracts, extract triggers, and build a structured MoRF-trigger database.</p>
-        <details><summary>Details</summary>
-          <p>Prompt-engineered GPT calls + regex cleaning yielded high-fidelity trigger assignments. Database powered downstream binding-propensity modeling. Poster at Suddath Symposium 2025.</p>
-        </details>
-      </article>
-
-      <article class="project-card">
+        <p>Prompt-engineered pipeline to mine ~200 abstracts, extract ligand triggers & structural transitions, and build a structured database.</p>
+        <ul>
+          <li>LLM + regex for high-precision extraction</li>
+          <li>8 ligand classes & secondary-structure categories</li>
+          <li>Poster at Georgia Tech’s Suddath Symposium 2025</li>
+        </ul>
+      </div>
+      <div id="proj2" class="project-content">
         <h3>Residue-Level Binding Propensity Modeling</h3>
-        <p>Dual-head classifier (BiLSTM & PLM fine-tuning) predicting intrinsic disorder and ligand binding per residue.</p>
-        <details><summary>Details</summary>
-          <p>Used ESM2 embeddings; multi-task loss on disorder masks & BioLiP binding labels; achieved [your metric here]. Deployed as Python package in Torres lab.</p>
-        </details>
-      </article>
-
-      <article class="project-card">
+        <p>Dual-head deep learning (BiLSTM + PLM fine-tuning) predicting both disorder and ligand-binding propensities per residue.</p>
+        <ul>
+          <li>ESM2 embeddings; multi-task loss</li>
+          <li>Trained on annotated BioLiP data</li>
+          <li>Packaged as Python library in Torres Lab</li>
+        </ul>
+      </div>
+      <div id="proj3" class="project-content">
         <h3>Graph-Based BCR Clustering</h3>
-        <p>Novel pipeline to cluster B-cell receptors by lineage using k-NN graphs, Louvain, MST, and dense subgraph analysis.</p>
-        <details><summary>Details</summary>
-          <p>Handled 1M+ sequences, identified hierarchy of clones, and visualized affinity maturation paths. Intern report at Regeneron 2025.</p>
-        </details>
-      </article>
-
-      <!-- add more <article> for each project -->
+        <p>Novel pipeline combining k-NN graphs, Louvain clustering, MST, and dense subgraph mining to reveal B-cell lineage hierarchies.</p>
+        <ul>
+          <li>Processed 1M+ sequences</li>
+          <li>Affinity maturation tree inference</li>
+          <li>Intern report at Regeneron Summer 2025</li>
+        </ul>
+      </div>
+      <div id="proj4" class="project-content">
+        <h3>Cardiac Polygenic Risk Score Ensemble</h3>
+        <p>Gradient-boosted + deep ensemble PRS models for cardiovascular risk, benchmarked on South Asian cohorts.</p>
+        <ul>
+          <li>Ensemble of XGBoost & neural nets</li>
+          <li>Cross-population calibration</li>
+          <li>Published internal MedGenome analysis</li>
+        </ul>
+      </div>
+      <div id="proj5" class="project-content">
+        <h3>Low-Pass Genomic Imputation</h3>
+        <p>Replicated & extended GLIMPSE 2.0 with deep learning for low-coverage WGS imputation.</p>
+        <ul>
+          <li>Custom CNN/Transformer imputation models</li>
+          <li>Performance vs. GLIMPSE & Beagle</li>
+          <li>Code open-sourced on GitHub</li>
+        </ul>
+      </div>
+      <div id="proj6" class="project-content">
+        <h3>ALS GWAS + Statistical Validation</h3>
+        <p>Deep neural network for multigenic ALS association + novel GWAS pipeline validation method without clinical metadata.</p>
+        <ul>
+          <li>Tested on public WGS data</li>
+          <li>Generalizable to other diseases</li>
+          <li>Under review as a methods manuscript</li>
+        </ul>
+      </div>
     </section>
 
     <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section">
       <h2>Achievements</h2>
       <ul>
-        <li>🏅 Institute Silver Medalist – IIT Mandi</li>
-        <li>🏆 Graduate Research Award – Georgia Tech</li>
-        <li>🧬 Poster Presentation – Suddath Symposium 2025</li>
+        <li>🏅 Silver Medallist – IIT Mandi (Top of Class)</li>
+        <li>🏆 Graduate Research Award – Georgia Tech (Torres Lab)</li>
+        <li>🧬 Poster Presenter – Suddath Symposium 2025</li>
         <li>🌍 Mitacs Globalink Scholar – UBC</li>
       </ul>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section id="blog-preview" class="section">
+      <h2>From the Blog</h2>
+      <div class="blog-preview">
+        <h3><a href="blog/index.html">Breaking Into Bioinformatics</a></h3>
+        <p><i>Published July 2025</i></p>
+        <p>How I combined engineering, coding, and biology to build my career in AI-driven bioinformatics—and how you can too.</p>
+      </div>
     </section>
 
   </main>
@@ -103,7 +158,6 @@
   <footer class="site-footer">
     <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">aarushi@example.com</a></p>
   </footer>
-
 </body>
 </html>
 
