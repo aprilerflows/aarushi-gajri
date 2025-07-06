@@ -1,91 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aarushi Gajri | Bioinformatics & AI</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Aarushi Gajri - Bioinformatics</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <img src="headshot.jpg" alt="Aarushi Gajri Headshot" class="headshot"/>
+  <header>
     <h1>Aarushi Gajri</h1>
-    <p class="subtitle">AI for Biology · Protein Modeling · Precision Medicine</p>
+    <p>Bioinformatics · AI for Biology · Drug Discovery</p>
     <nav>
       <a href="#about">About</a>
+      <a href="#timeline">Journey</a>
       <a href="#projects">Projects</a>
-      <a href="Aarushi_Gajri_Resume.pdf" target="_blank">Download CV</a>
+      <a href="#achievements">Achievements</a>
+      <a href="blog/index.html">Blog</a>
     </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Master’s student in Bioinformatics at Georgia Tech, with a passion for building AI systems that solve complex biological problems. My research spans protein-ligand interactions, intrinsic disorder modeling, and personalized risk prediction for disease using multi-omics data.</p>
-    <div class="logo-bar">
-      <img src="gatech-logo.png" alt="Georgia Tech"/>
-      <img src="iitmandi-logo.png" alt="IIT Mandi"/>
-      <img src="regeneron-logo.png" alt="Regeneron"/>
-      <img src="ubc-logo.png" alt="UBC"/>
-      <img src="medgenome-logo.png" alt="MedGenome"/>
+    <img src="images/headshot.jpg" alt="Headshot" class="headshot">
+    <p>I am a bioinformatics researcher deeply passionate about AI for biology, protein modeling, and personalized medicine. My journey spans work at IIT Mandi, MedGenome, UBC, Georgia Tech, and Regeneron—building models to decode biological systems and design predictive tools for human health.</p>
+  </section>
+
+  <section id="timeline">
+    <h2>My Journey</h2>
+    <div class="timeline">
+      <div class="timeline-logo" title="BTech (Hons) Bioengineering – IIT Mandi"><img src="images/iitmandi-logo.png" /></div>
+      <div class="timeline-logo" title="Research Intern – UBC, CpG Annotation"><img src="images/ubc-logo.png" /></div>
+      <div class="timeline-logo" title="Data Science Intern – Elucidata"><img src="images/elucidata-logo.png" /></div>
+      <div class="timeline-logo" title="Bioinformatics Analyst – MedGenome"><img src="images/medgenome-logo.png" /></div>
+      <div class="timeline-logo" title="MS Bioinformatics – Georgia Tech"><img src="images/gatech-logo.png" /></div>
+      <div class="timeline-logo" title="Graduate Intern – Regeneron"><img src="images/regeneron-logo.png" /></div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Research Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>MoRF Trigger NLP</h3>
-        <p>Used LLMs to extract and categorize triggers and secondary structures from MoRF-related abstracts.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Built a comprehensive database of structured MoRF-trigger interactions and structural transitions using prompt engineering and regex parsing. Presented at Suddath Symposium.</div>
-      </div>
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>MoRF Trigger & Structure Analysis</h3>
+      <p>LLM + NLP pipeline to extract and classify Molecular Recognition Feature triggers and structural transitions from literature. Powered database creation and deep model training.</p>
+      <details><summary>Read more</summary>
+        <p>Summarized ~200 abstracts, engineered regex+prompt-based LLM queries, categorized into 8 ligand classes, and extracted secondary structures triggered upon interaction. Resulted in a clean, annotated MoRF-Trigger-Structure database and a poster at Georgia Tech's Suddath Symposium.</p>
+      </details>
+    </div>
 
-      <div class="card">
-        <h3>MoRF Binding Detector</h3>
-        <p>Dual-head deep learning model predicting ligand binding residues in intrinsically disordered proteins.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Trained BiLSTM and fine-tuned PLM to jointly predict disorder and ligand binding across 8 molecular categories.</div>
-      </div>
+    <div class="card">
+      <h3>Residue-Level Binding Propensity Model</h3>
+      <p>Built a BiLSTM and fine-tuned PLM model for residue-level prediction of ligand binding and disorder using the BioLiP database.</p>
+      <details><summary>Read more</summary>
+        <p>Multi-head classification setup with protein language model embeddings. Joint training on disorder regions and binding annotations with ligand class supervision.</p>
+      </details>
+    </div>
 
-      <div class="card">
-        <h3>BCR Clustering (Regeneron)</h3>
-        <p>Designed novel graph-based pipeline to uncover hierarchies in BCR repertoires with shared VDJ genes.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Inferred affinity maturation trees using Louvain clustering, MST, and local density metrics.</div>
-      </div>
-
-      <div class="card">
-        <h3>Cardiac PRS (MedGenome)</h3>
-        <p>Built ensemble models for cardiovascular risk using GWAS and boosting-based PRS scoring.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Benchmarked gradient boosting and DL ensembles; evaluated cross-population transferability.</div>
-      </div>
-
-      <div class="card">
-        <h3>Low-Pass Imputation</h3>
-        <p>Replicated and extended GLIMPSE 2.0 for low-coverage whole genome imputation.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Built DL imputation models and compared performance on simulated low-pass data.</div>
-      </div>
-
-      <div class="card">
-        <h3>ALS GWAS Pipeline</h3>
-        <p>Deep neural networks + novel statistical test for GWAS without clinical phenotype data.</p>
-        <button onclick="toggleCard(this)">Learn More</button>
-        <div class="details">Demonstrated results on ALS WGS data; method generalizable to multigenic disorders.</div>
-      </div>
+    <div class="card">
+      <h3>Clustering BCRs at Regeneron</h3>
+      <p>Developed a graph-based algorithm to cluster B-cell receptor repertoires by lineage and selection pressure.</p>
+      <details><summary>Read more</summary>
+        <p>Used kNN graphs, Louvain clustering, MST traversals, and custom rep-sequence heuristics to reveal affinity hierarchies within immune repertoires.</p>
+      </details>
     </div>
   </section>
 
-  <footer>
-    <p>© Aarushi Gajri · <a href="mailto:aarushi@email.com">aarushi@email.com</a></p>
-  </footer>
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>🏆 Institute Silver Medalist – IIT Mandi</li>
+      <li>🎓 Graduate Research Award – Georgia Tech (Torres Lab)</li>
+      <li>🧬 Poster Presentation – Suddath Symposium</li>
+      <li>🌍 Mitacs Globalink Scholar – UBC</li>
+    </ul>
+  </section>
 
-  <script>
-    function toggleCard(btn) {
-      const detail = btn.nextElementSibling;
-      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <footer>
+    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">Contact Me</a></p>
+  </footer>
 </body>
 </html>
