@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Breaking Into Bioinformatics — Blog</title>
-  <link href="../style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Bioinformatics and Machine Learning</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; color: #333; }
+        h1, h2 { color: #2c3e50; }
+        .container { max-width: 800px; margin: auto; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        a { color: #2980b9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { margin-bottom: 1.5em; }
+    </style>
 </head>
-<body class="light-mode">
-  <header class="hero position-relative text-center text-white mb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative py-5">
-      <h1 class="display-6 fw-bold">Breaking Into Bioinformatics</h1>
-      <p class="lead">Published July 2025 · By Aarushi Gajri</p>
-      <a href="../index.html" class="btn btn-accent btn-sm">← Back to Home</a>
-    </div>
-  </header>
-  <main class="container mb-5" data-aos="fade-up">
-    <article>
-      <p>Bioinformatics sits at the crossroads of life science and data science—where we apply algorithms, statistics, and machine learning to understand biological systems. My own path began in 2019 at IIT Mandi, studying bioengineering. I was fascinated by how genetic data could reveal disease mechanisms, but I lacked coding skills. Over the next six years, I built a toolbox of computational methods, pursued internships, and dove deep into machine learning frameworks tailored for biology.</p>
+<body>
+<div class="container">
+    <h1>Getting Started with Bioinformatics and Machine Learning</h1>
 
-      <h2>Step 1: Build a Strong Foundation</h2>
-      <p>Start with introductory courses in biology and programming. I learned Python and R to manipulate genomic datasets, then tackled statistics and Linux command‐line. Early internships at Elucidata and MedGenome exposed me to real-world pipelines—somatic variant calling, cell deconvolution, and deep-learning phenotyping. Those months taught me to write robust, reproducible code and to appreciate the complexities of biological data.</p>
+    <p>If you're a student or a researcher curious about combining bioinformatics and machine learning (ML), you're about to embark on an exciting and highly rewarding journey. Here's how you can get started effectively and build a solid foundation.</p>
 
-      <h2>Step 2: Specialize in ML for Biology</h2>
-      <p>During my Mitacs Globalink internship at UBC, I designed workflows to annotate CpG methylation patterns linked to aging and sex differences. That project introduced me to TensorFlow and neural network interpretability. Later, at Georgia Tech, I developed an NLP pipeline using GPT-4 to mine Molecular Recognition Features (MoRFs) from the literature—combining prompt engineering with regex parsing to curate a domain‐specific database.</p>
+    <h2>1. Understand the Intersection</h2>
+    <p>Bioinformatics combines biology, computer science, statistics, and engineering to analyze and interpret biological data. Machine learning provides tools to identify patterns and make predictions based on large datasets—critical for modern biology.</p>
 
-      <h2>Step 3: Expand to Structural & Systems Biology</h2>
-      <p>My Regeneron internship pushed me into immune repertoire analysis. I built graph-based algorithms to cluster B-cell receptors by VDJ lineage and infer affinity maturation paths. This experience showed me the power of network science in immunology and led to my current passion: generative models that predict molecular interactions at the residue level.</p>
+    <h2>2. Build a Strong Foundation</h2>
+    <p>Before diving deep, ensure you are comfortable with:</p>
+    <ul>
+        <li><strong>Biology Fundamentals:</strong> Genomics, proteomics, transcriptomics, and molecular biology.</li>
+        <li><strong>Programming:</strong> Python and R are primary languages in bioinformatics.</li>
+        <li><strong>Data Analysis & Statistics:</strong> Familiarity with statistical concepts such as hypothesis testing, regression analysis, and Bayesian methods.</li>
+    </ul>
 
-      <h2>Advice for Aspiring Bioinformaticians</h2>
-      <ul>
-        <li><strong>Learn Python & R:</strong> Essential for data wrangling, statistics, and ML libraries.</li>
-        <li><strong>Work on Open Datasets:</strong> Practice with TCGA, 1000 Genomes, BioLiP, etc.</li>
-        <li><strong>Pursue Internships:</strong> Real pipelines, domain knowledge, and code validation.</li>
-        <li><strong>Master Version Control:</strong> Git & GitHub for collaboration and reproducibility.</li>
-        <li><strong>Stay Curious:</strong> Read papers, attend workshops, and contribute to open-source.</li>
-      </ul>
+    <h2>3. Learn Essential Tools and Libraries</h2>
+    <p>Get acquainted with powerful libraries commonly used in Bio+ML:</p>
+    <ul>
+        <li><code>Pandas, NumPy, SciPy</code> for data handling.</li>
+        <li><code>Matplotlib, Seaborn</code> for data visualization.</li>
+        <li><code>Scikit-learn</code> for classical ML algorithms.</li>
+        <li><code>PyTorch, TensorFlow</code> for deep learning models.</li>
+        <li><code>Biopython</code> for biological data processing.</li>
+    </ul>
 
-      <p>Bioinformatics is more than coding; it’s solving biological puzzles with computational creativity. Whether you aim to design novel proteins, predict disease risk, or chart immune landscapes, the key is to marry rigorous data skills with a deep love for biology. Your next discovery awaits at that interface—go explore it!</p>
-    </article>
-  </main>
-  <footer class="bg-light text-center py-4">
-    <p>© 2025 Aarushi Gajri · <a href="mailto:aarushi@example.com">Contact</a></p>
-  </footer>
+    <h2>4. Explore Datasets</h2>
+    <p>Hands-on experience is essential. Explore publicly available biological datasets:</p>
+    <ul>
+        <li><a href="https://www.ncbi.nlm.nih.gov/">NCBI</a></li>
+        <li><a href="https://www.encodeproject.org/">ENCODE Project</a></li>
+        <li><a href="https://www.uniprot.org/">UniProt</a></li>
+        <li><a href="https://www.kaggle.com/">Kaggle Bioinformatics Competitions</a></li>
+    </ul>
 
-  <!-- Bootstrap & AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
+    <h2>5. Participate in Projects and Competitions</h2>
+    <p>Real-world practice accelerates your learning. Participate in competitions like Kaggle challenges, DREAM challenges, or work on open-source projects on GitHub.</p>
+
+    <h2>6. Stay Updated</h2>
+    <p>Bioinformatics is rapidly evolving. Regularly read research papers, follow prominent researchers on platforms like Twitter, join bioinformatics forums such as BioStars, and attend conferences or workshops when possible.</p>
+
+    <h2>7. Network and Engage</h2>
+    <p>Connect with peers, join LinkedIn groups, or Slack communities focused on Bio+ML. Networking can lead to collaborations, internships, and career opportunities.</p>
+
+    <h2>8. Document Your Journey</h2>
+    <p>Consider blogging your progress or creating a professional portfolio showcasing your projects. This can significantly boost your career prospects.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Combining bioinformatics with machine learning opens a plethora of opportunities across academia, industry, and entrepreneurship. Embrace continuous learning and experimentation—it's the key to success in this interdisciplinary field.</p>
+
+    <p>Happy exploring!</p>
+
+</div>
 </body>
 </html>

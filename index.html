@@ -30,7 +30,6 @@
     <div class="overlay"></div>
     <figure class="hero-banner mx-auto my-4">
       <img src="images/banner.jpg" alt="Abstract AI-driven protein–ligand interaction rendering">
-      <figcaption class="text-white">Protein–ligand interactions visualized through AI and machine learning</figcaption>
     </figure>
     <div class="container position-relative">
       <img src="images/headshot.jpg" class="rounded-circle border border-3 border-white mb-3 headshot" alt="Aarushi Gajri">
@@ -54,44 +53,18 @@
     <section id="about" class="mb-5" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
       <p>
-        I’m a Master’s student in Bioinformatics at Georgia Tech, passionate about leveraging AI/ML to decode biology. My work spans:
+        I’m Aarushi, a Master's student in Bioinformatics at Georgia Tech with deep expertise at the intersection of AI, machine learning, and biology. My mission is to harness computational models to unravel complex biological systems and advance personalized medicine. My research includes:
       </p>
       <ul>
-        <li>LLM-driven extraction of Molecular Recognition Feature (MoRF) triggers</li>
-        <li>Deep models for residue-level ligand-binding prediction</li>
-        <li>Graph-based clustering of immune repertoires</li>
+        <li>Developing NLP pipelines using LLMs for extracting critical biological interactions from literature.</li>
+        <li>Fine-tuning PLMs for predicting residue-level transition creating protein-ligand interactions in disorded proteins.</li>
+        <li>Building scalable graph-based algorithms for immune repertoire analysis.</li>
       </ul>
       <p>
-        I aim to design generative and predictive tools that accelerate personalized medicine and novel therapeutic discovery.
+        I am passionate about creating innovative ML/AI methods that facilitate discoveries in therapeutic development and precision healthcare.
       </p>
     </section>
 
-    <!-- RESEARCH PIPELINE -->
-    <section id="pipeline" class="mb-5" data-aos="fade-up">
-      <h2 class="section-title">Research Pipeline</h2>
-      <div class="stepper d-flex justify-content-between flex-wrap">
-        <div class="step text-center">
-          <div class="step-circle">1</div>
-          <h5>Literature Mining</h5>
-          <p>LLM + regex to extract MoRF triggers & structural mentions.</p>
-        </div>
-        <div class="step text-center">
-          <div class="step-circle">2</div>
-          <h5>Database Curation</h5>
-          <p>Clean & categorize triggers into 8 molecular bins.</p>
-        </div>
-        <div class="step text-center">
-          <div class="step-circle">3</div>
-          <h5>Model Development</h5>
-          <p>Train BiLSTM & fine-tuned PLM for disorder & binding.</p>
-        </div>
-        <div class="step text-center">
-          <div class="step-circle">4</div>
-          <h5>Validation & Deployment</h5>
-          <p>Evaluate on BioLiP, publish posters, integrate into pipelines.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- TIMELINE -->
     <section id="timeline" class="mb-5" data-aos="fade-up">
@@ -125,7 +98,7 @@
         <!-- Project 1 -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="images/elucidata-logo.png" class="card-img-top logo-img p-3" alt="MoRF Trigger NLP">
+            <img src="images/gatech-logo.png" class="card-img-top logo-img p-3" alt="MoRF Trigger NLP">
             <div class="card-body">
               <h5 class="card-title">MoRF Trigger NLP</h5>
               <p class="card-text">
@@ -142,7 +115,7 @@
               <div class="modal-header"><h5>MoRF Trigger NLP Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
               <div class="modal-body">
                 <ul>
-                  <li>Prompt-engineered GPT-4 for MoRF QA</li>
+                  <li>Prompt-engineered Llama3.1 and used NLP QA methods.</li>
                   <li>Regex parsing to standardize chemical names</li>
                   <li>8 molecular bins & secondary-structure categories</li>
                   <li>Poster at 2025 Suddath Symposium</li>
@@ -234,7 +207,7 @@
                 <ul>
                   <li>Gradient boosting + neural net ensemble</li>
                   <li>Nested cross-validation & calibration</li>
-                  <li>AUC gain of +0.06 vs. baseline PRS</li>
+                  <li>AUC gain of +0.1 vs. baseline PRS</li>
                   <li>Subgroup analysis on five cohorts</li>
                 </ul>
               </div>
@@ -247,9 +220,9 @@
           <div class="card h-100 shadow-sm">
             <img src="images/medgenome-logo.png" class="card-img-top logo-img p-3" alt="Genomic Imputation">
             <div class="card-body">
-              <h5 class="card-title">Deep-Learning Imputation</h5>
+              <h5 class="card-title">Low-pass Genomic Imputation</h5>
               <p class="card-text">
-                CNN+self-attention model replicating GLIMPSE 2.0, reducing 0.5× WGS error by 20% on simulated low-pass data.
+                Autencoder model and replicating GLIMPSE 2.0 on UKBB, able to replicate PRS results (97% correlation) for Parkinsons with both methods.
               </p>
               <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#modal5">Learn More</button>
             </div>
@@ -262,8 +235,7 @@
               <div class="modal-header"><h5>Imputation Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
               <div class="modal-body">
                 <ul>
-                  <li>CNN + transformer blocks for genotype prediction</li>
-                  <li>20% error reduction vs. GLIMPSE 2.0</li>
+                  <li>Autoencoder method for genotype prediction</li>
                   <li>Nextflow pipeline for scalable runs</li>
                 </ul>
               </div>
@@ -292,8 +264,9 @@
               <div class="modal-body">
                 <ul>
                   <li>5-layer MLP on SNP feature encodings</li>
-                  <li>Permutation-free validation protocol</li>
-                  <li>2× speed-up vs. bootstrap tests</li>
+                  <li>Feature extraction on the first layer to understand SNP contribution.</li>
+                  <li>Also used Random Forest to perform the analysis as a benchmark. </li>
+                  <li>Novel statistical method to generate GWAS data.</li>
                 </ul>
               </div>
             </div>
@@ -306,10 +279,10 @@
     <section id="achievements" class="mb-5" data-aos="fade-up">
       <h2 class="section-title">Achievements</h2>
       <div class="d-flex flex-wrap gap-2">
-        <span class="badge bg-accent">🏅 Silver Medallist – IIT Mandi</span>
-        <span class="badge bg-accent">🏆 Grad Research Award – Georgia Tech</span>
-        <span class="badge bg-accent">🧬 Poster – Suddath Symposium 2025</span>
-        <span class="badge bg-accent">🌍 Mitacs Scholar – UBC</span>
+        <span class="badge bg-accent">Silver Medallist – IIT Mandi</span>
+        <span class="badge bg-accent">Grad Research Award – Georgia Tech</span>
+        <span class="badge bg-accent">Poster – Suddath Symposium 2025</span>
+        <span class="badge bg-accent"> Mitacs Scholar – UBC</span>
       </div>
     </section>
 
